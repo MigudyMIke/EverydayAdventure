@@ -28,6 +28,7 @@
             <string>var_move = 0;
 var_op_m = 0;
 var_op_m_max = 5;
+input = scr_detect_input;
 </string>
           </argument>
         </arguments>
@@ -51,9 +52,10 @@ var_op_m_max = 5;
           <argument>
             <kind>1</kind>
             <string>///menu options
+script_execute(input);
 switch(var_op_m){
     case 0:
-        if keyboard_check_released(ord("E")){
+        if (var_action){
         var_move = 1;
             with (self){
                 instance_destroy();
@@ -61,30 +63,30 @@ switch(var_op_m){
         }
         break;
     case 1:
-        if keyboard_check_released(ord("E")){
+        if (var_action){
             }
         break;
     case 2:
-        if keyboard_check_released(ord("E")){
+        if (var_action){
             }
         break;
     case 3:
-        if keyboard_check_released(ord("E")){
+        if (var_action){
             }
         break;
     case 4:
-        if keyboard_check_released(ord("E")){
+        if (var_action){
         room_goto(rm_main_menu);
             }
         break;
     case 5:
-        if keyboard_check_released(ord("E")){
+        if (var_action){
             game_end();
             }
         break;
 }
 //exit
-if (keyboard_check_released(vk_escape)){
+if (var_pause_menu){
     var_move = 1;
     with(self){
         instance_destroy();

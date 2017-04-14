@@ -28,6 +28,7 @@
             <string>var_move = 0;
 x = 96;
 state = scr_move;
+input = scr_detect_input;
 script_execute(scr_globalvar);
 </string>
           </argument>
@@ -51,7 +52,8 @@ script_execute(scr_globalvar);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(state);
+            <string>script_execute(input);
+script_execute(state);
 </string>
           </argument>
         </arguments>
@@ -73,34 +75,36 @@ script_execute(scr_globalvar);
           <argument>
             <kind>1</kind>
             <string>///switch between rooms
+script_execute(input);
+
 switch(var_op_m){
     case 0:
-        if keyboard_check_released(vk_enter){
-            room_goto(rm_rpg1);
+        if (var_action){
+            room_goto(rm_bed1);
             }
         break;
     case 1:
-        if keyboard_check_released(vk_enter){
-            room_goto(rm_rpg1);
+        if (var_action){
+            room_goto(rm_bed1);
             }
         break;
     case 2:
-        if keyboard_check_released(vk_enter){
-            room_goto(rm_rpg1);
+        if (var_action){
+            room_goto(rm_bed1);
             }
         break;
     case 3:
-        if keyboard_check_released(vk_enter){
-            room_goto(rm_rpg1);
+        if (var_action){
+            room_goto(rm_bed1);
             }
         break;
     case 4:
-        if keyboard_check_released(vk_enter){
-            room_goto(rm_rpg1);
+        if (var_action){
+            room_goto(rm_bed1);
             }
         break;
     case 5:
-        if keyboard_check_released(vk_enter){
+        if (var_action){
             game_end();
             }
         break;
@@ -134,15 +138,15 @@ draw_set_halign(fa_left);
 draw_set_colour(c_black);
 //title screen
 draw_set_font(fnt_title);
-draw_text(96, 128, "NAME");
+draw_text(96, 128, "EveryDay Adventure");
 //rest of the menu
 draw_set_font(fnt_mm_text);
-draw_text(96, 224, "RPG");
-draw_text(96, 288, "ARPG");
-draw_text(96, 352, "PONG");
-draw_text(96, 416, "PUZZEL");
-draw_text(96, 480, "SOMETHING ELSE");
-draw_text(96, 544, "QUIT");
+draw_text(96, 224, "Start");
+draw_text(96, 288, "Load");
+draw_text(96, 352, "Saves");
+draw_text(96, 416, "Options");
+draw_text(96, 480, "Credits");
+draw_text(96, 544, "Quit");
 //draw spr_menu
 switch(var_op_m){
     case 0:

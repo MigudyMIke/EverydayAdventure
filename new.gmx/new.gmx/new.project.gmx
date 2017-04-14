@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_inv_wall</sprite>
     <sprite>sprites\spr_player_zelda</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_box</sprite>
@@ -15,9 +16,10 @@
     </sprites>
     <sprites name="triggers">
       <sprite>sprites\spr_next_rm</sprite>
-      <sprite>sprites\spr_inv_wall</sprite>
+      <sprite>sprites\spr_next_rm_lock</sprite>
     </sprites>
     <sprite>sprites\spr_item</sprite>
+    <sprite>sprites\sprite9</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="rpg">
@@ -35,6 +37,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_detect_input.gml</script>
     <script>scripts\scr_move.gml</script>
     <script>scripts\scr_globalvar.gml</script>
     <scripts name="inventory">
@@ -51,8 +54,8 @@
     <font>fonts\fnt_text</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_wall</object>
     <object>objects\obj_inv_wall</object>
+    <object>objects\obj_wall</object>
     <object>objects\obj_controls</object>
     <object>objects\obj_box</object>
     <objects name="player">
@@ -79,11 +82,13 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
-    <rooms name="rpg">
-      <room>rooms\rm_rpg_blank</room>
-      <room>rooms\rm_rpg3_livingroom</room>
-      <room>rooms\rm_rpg1</room>
-      <room>rooms\rm_rpg2_hall</room>
+    <room>rooms\rm_blank</room>
+    <rooms name="apartment">
+      <rooms name="303">
+        <room>rooms\rm_bed1</room>
+        <room>rooms\rm_bed2</room>
+        <room>rooms\rm_303_main</room>
+      </rooms>
     </rooms>
   </rooms>
   <help>
